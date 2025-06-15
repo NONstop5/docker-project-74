@@ -2,7 +2,15 @@ compose-up:
 	docker compose up -d
 
 compose-down:
-	docker compose down --remove-orphans || true
+	docker compose down --remove-orphans
+
+compose-setup:
+	docker compose run --rm app make setup
+
+compose-ps:
+	docker compose ps
+
+compose-setup: compose-down compose-build
 
 compose-build:
 	docker compose build
@@ -12,8 +20,6 @@ compose-build-prod:
 
 compose-push-prod:
 	docker compose -f docker-compose.yml push app
-
-compose-setup: compose-down compose-build
 
 compose-config:
 	docker compose config
