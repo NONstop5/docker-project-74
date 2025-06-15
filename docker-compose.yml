@@ -4,9 +4,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: make test
+#    environment:
+#      DATABASE_NAME: ${DATABASE_NAME}
+#      DATABASE_USERNAME: ${DATABASE_USERNAME}
+#      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+#      DATABASE_HOST: ${DATABASE_HOST}
+#      DATABASE_PORT: ${DATABASE_PORT}
+    command: >
+      sh -c "make prepare-env && make test"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   db:
     image: postgres:latest
     restart: unless-stopped
