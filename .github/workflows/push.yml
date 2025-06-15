@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v4
+      - name: Clone repo
+        uses: actions/checkout@v4
 
       - name: Run tests
         run: make compose-test-ci
