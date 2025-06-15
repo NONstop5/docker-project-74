@@ -17,7 +17,7 @@ jobs:
       - name: Run tests
         run: |
           docker -v
-          docker-compose -v
+          docker compose -v
 #        run: make compose-test-ci
 
       - name: Set up Docker Buildx
