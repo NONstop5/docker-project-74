@@ -18,5 +18,5 @@ compose-setup: compose-down compose-build
 compose-config:
 	docker-compose config
 
-compose-ci:
+compose-test-ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit
