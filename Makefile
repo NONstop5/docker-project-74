@@ -7,6 +7,12 @@ compose-down:
 compose-build:
 	docker-compose build
 
+compose-build-prod:
+	docker-compose -f docker-compose.yml build app
+
+compose-push-prod:
+	docker-compose -f docker-compose.yml push app
+
 compose-setup: compose-down compose-build
 
 compose-config:
