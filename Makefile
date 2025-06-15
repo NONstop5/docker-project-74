@@ -18,5 +18,5 @@ compose-setup: compose-down compose-build
 compose-config:
 	docker-compose config
 
-compose-ci: compose-down
-	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+compose-ci:
+	docker-compose -f docker-compose.yml up --abort-on-container-exit
