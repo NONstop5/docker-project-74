@@ -10,8 +10,6 @@ compose-setup:
 compose-ps:
 	docker compose ps
 
-compose-setup: compose-down compose-build
-
 compose-build:
 	docker compose build
 
@@ -26,3 +24,6 @@ compose-config:
 
 compose-test-ci:
 	docker compose -f docker-compose.yml up --abort-on-container-exit
+
+env-prepare:
+	cp -n .env.example .env
