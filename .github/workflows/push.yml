@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Run tests
         run: |
           docker -v
-          docker compose -v
+          docker-compose -v
 #        run: make compose-test-ci
 
       - name: Set up Docker Buildx
