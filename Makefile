@@ -27,3 +27,6 @@ compose-test-ci:
 
 env-prepare:
 	cp -n .env.example .env
+
+compose-prepare:
+	cp -n docker-compose.override.example.yml docker-compose.override.yml
