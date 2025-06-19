@@ -16,8 +16,7 @@ git clone git@github.com:NONstop5/docker-project-74.git
 
 ### Dev prepare
 ```bash
-make env-prepare && \
-make compose-prepare
+make env-prepare
 ```
 
 ### Dev run
@@ -39,4 +38,23 @@ make compose-push-prod
 ### Prod run tests
 ```bash
 make compose-test-ci
+```
+---
+### App commands in image
+
+App env prepare
+```bash
+docker compose run --rm app make prepare-env
+```
+App setup
+```bash
+docker compose run --rm app make setup
+```
+App run tests
+```bash
+docker compose run --rm app make test
+```
+App cli
+```bash
+docker compose run --rm app bash
 ```
